@@ -1,0 +1,45 @@
+﻿@using Cupcakecom.Models;
+@model IEnumerable<Order>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<br />
+<br />
+<div class="row">
+    <div class="col-6">
+        <h2 class="text-info">Order List</h2>
+    </div>
+
+</div>
+<form method="post">
+</form>
+<br />
+<div>
+    <table class="table table-striped border" id="myTable">
+        <thead>
+            <tr class="table-info">
+                <th>
+                    @Html.DisplayNameFor(c => c.OrderNo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(c => c.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(c => c.OrderDate)
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.OrderNo</td>
+                    <td>@item.Name</td>
+                    <td>@item.OrderDate</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
